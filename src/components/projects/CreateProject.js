@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import styles from "./CreateProject.module.css";
 
 class CreateProject extends Component {
   // constructor(props) {
@@ -13,6 +14,11 @@ class CreateProject extends Component {
   // });
 
 
+  // }
+
+  // componentDidMount() {
+  //   var elems = document.querySelectorAll('#drink');
+  //   var instances = M.FormSelect.init(elems, options);
   // }
 
   state = {
@@ -31,7 +37,7 @@ class CreateProject extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state)
-  }
+  } 
 
   render() {
     return (
@@ -69,7 +75,7 @@ class CreateProject extends Component {
             <input type="text" id='size' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Submit</button>
+            <button className={"btn pink lighten-1 z-depth-0 " + styles.button}>Submit</button>
           </div>
         </form>
       </div>
