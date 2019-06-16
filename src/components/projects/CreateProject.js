@@ -15,7 +15,8 @@ class CreateProject extends Component {
     drink: '',
     size: '',
     extras:'',
-    other:''
+    other:'',
+    date:Date.now()
   }
 
   handleChange = (e) => {
@@ -27,6 +28,7 @@ class CreateProject extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+   
     console.log(this.state)
   }
 
