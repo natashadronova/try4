@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProjectSummary = (project) => {
-  console.log(project);
+  
   return (
     <tr>
     <td><Link to={{
-        pathname:'/order/' + project.id, state: project}}>
+        pathname:'/order/' + project.project.id, state: project.project}}>
         {project.drink}
         </Link></td>
     <td>{project.size}</td>

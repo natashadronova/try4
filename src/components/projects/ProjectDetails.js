@@ -1,15 +1,17 @@
 import React from 'react'
 import { firestore } from 'firebase';
+import {connect } from 'react-redux';
+import {firestoreConnect} from 'react-redux-firebase';
+import {compose} from 'redux';
 
-export default function ProjectDetails(props) {
-  //HOW TO PASS PROJECT DETAILS FROM PROJECT SUMMARY PAGE TO HERE???
-  //console.log('our props:'+props);
-  //const id=props.this.state.ordered.orders.id;
-  //props.match.params.id;
-  return (
+const ProjectDetails=(props) =>{
+  // const id=props.match.params.id;
+  
+  const {order}=props;
+  if(order) {
+    return(
     <div className="container section project-details">
-   
-    {/* <table>
+       <table>
         <thead>
           <tr>
             <th>Order</th>
@@ -19,34 +21,45 @@ export default function ProjectDetails(props) {
         <tbody>
           <tr>
             <th>Drink</th>
-            <td>{project.drink}</td>
+            <td>{order.drink}</td>
           </tr>
           <tr>
             <th>Size</th>
-            <td>{project.size}</td>
+            <td>{order.size}</td>
           </tr>
           <tr>
             <th>Extras</th>
-            <td>{project.extras}</td>
+            <td>{order.extras}</td>
           </tr>
           <tr>
           <th>Ordered</th>
-            <td>{project.date}</td>
+            <td>{order.date}</td>
           </tr>
         </tbody>
-        </table> */}
-      {/* <div className="card z-depth-0">
-        <div className="card-content">
-          <div className="card-title">Order-{id} </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, fugiat quis odio nesciunt dolor delectus iste, accusamus libero dolorem atque reprehenderit numquam! Reiciendis quas sequi dicta molestiae nostrum laborum magnam!</p>
-        </div>
-        <div className="card-action gret lighten-4 grey-text">
-          <div>Posted by Nat</div>
-          <div>3June 2019</div>
-        </div>
-      </div> */}
-    </div>
-  )
+        </table>
+    </div>)
+  } else {
+    return(
+      <div className='container center'>
+      <p>Loading order...</p>
+      </div>
+    )
+  }
+  
+};
+
+const mapStateToProps=(state,ownProps)=>{
+  const id=ownProps.match.params.id;
+  const orders=state.firestore.data.orders;
+  const order=orders ? orders[id]:null;
+  
+  return {
+    order:order
+  }
 }
-
-
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    {collection:'orders'}
+  ])
+) (ProjectDetails);
