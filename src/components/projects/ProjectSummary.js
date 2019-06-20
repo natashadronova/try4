@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProjectSummary = (project) => {
-
+  console.log(project);
   return (
     <tr>
-    <td>{project.drink}</td>
+    <td><Link to={{
+        pathname:'/order/' + project.id, state: project}}>
+        {project.drink}
+        </Link></td>
     <td>{project.size}</td>
     <td>{project.extras}</td>
     <td>{project.date}</td>

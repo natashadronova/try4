@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import styles from "./CreateProject.module.css";
 import M from "materialize-css";
+import {connect} from 'react-redux';
+import {createProject} from '../../store/actions/projectActions';
 
 class CreateProject extends Component {
 
@@ -16,6 +18,7 @@ class CreateProject extends Component {
     size: '',
     extras:'',
     other:'',
+    id:'',
     date:Date.now()
   }
 
@@ -28,8 +31,8 @@ class CreateProject extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-   
-    console.log(this.state)
+   this.props.createProject(this.state);
+    //console.log(this.state)
   }
 
   render() {
@@ -124,4 +127,10 @@ class CreateProject extends Component {
   }
 }
 
-export default CreateProject
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    createProject:(project)=>dispatch(createProject(project))
+  }
+}
+
+export default connect(null,mapDispatchToProps) (CreateProject)

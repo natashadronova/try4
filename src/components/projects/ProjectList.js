@@ -16,13 +16,15 @@ const ProjectList = ({ projects }) => {
           </tr>
         </thead>
         <tbody>
-        
-      {projects && projects.map(project => {
-        return (
-          <ProjectSummary project={project} key={project.id} drink={project.drink} size={project.size} extras={project.extras}/>
-        )
-      })}
-      
+
+          {projects && projects.map(project => {
+            return (
+
+              <ProjectSummary project={project} key={project.id} drink={project.drink} size={project.size} extras={project.extras} />
+
+            )
+          })}
+
         </tbody>
       </table>
     </div>
