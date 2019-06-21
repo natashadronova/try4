@@ -19,7 +19,6 @@ class CreateProject extends Component {
     size: '',
     extras:'',
     other:'',
-    id:'',
     date:Date.now()
   }
 
@@ -33,7 +32,7 @@ class CreateProject extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
    this.props.createProject(this.state);
-    //console.log(this.state)
+    console.log(this.state)
   }
 
   render() {
@@ -43,38 +42,7 @@ class CreateProject extends Component {
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
           <h5 className="grey-text text-darken-3">Add your order</h5>
-          {/* <div className="input-field">
-            <label htmlFor="drink">Drink</label>
-            <input type="text" id='drink' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-            <label htmlFor="Size">Size (S / M / L)</label>
-            <input type="text" id='size' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-            <h6 className="grey-text text-darken-3">Any toppings?</h6>
-            <p>
-              <label>
-                <input type="checkbox" id='vanilla' name='vanilla' value='vanilla' className='col s12 m6 l3' />
-                <span>None</span>
-              </label>
-              <label>
-                <input type="checkbox" className="col s12 m6 l3" />
-                <span>Hazelnut</span>
-              </label>
-              <label>
-                <input type="checkbox" id='vanilla' name='vanilla' value='vanilla' className='col s12 m6 l3' />
-                <span>Vanilla</span>
-              </label>
-              <label>
-                <input type="checkbox" className="col s12 m6 l3" />
-                <span>Caramel</span>
-              </label>
-            </p>
-            <input type="text" id='size' onChange={this.handleChange} />
-          </div> */}
-
-
+         
           {/* ////////////////////////////////////////////////////////////////////// */}
           <div className=' section'>
             <div className="input-field col s12">

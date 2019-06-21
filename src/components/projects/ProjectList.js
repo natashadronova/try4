@@ -4,6 +4,7 @@ import ProjectSummary from './ProjectSummary';
 
 
 const ProjectList = ({ projects }) => {
+  console.log(projects);
   return (
     <div className="project-list section">
       <table>
@@ -20,8 +21,8 @@ const ProjectList = ({ projects }) => {
           {projects && projects.map(project => {
             return (
 
-              <ProjectSummary project={project} key={project.id} drink={project.drink} size={project.size} extras={project.extras} />
-
+              <ProjectSummary project={project} key={project.id} drink={project.drink} size={project.size} extras={project.extras}
+              /> // 
             )
           })}
 

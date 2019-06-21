@@ -6,7 +6,7 @@ import {compose} from 'redux';
 import { Redirect } from 'react-router-dom';
 
 const ProjectDetails=(props) =>{
-  // const id=props.match.params.id;
+  const id=props.match.params.id;
   const {order,auth}=props;
   //const {auth} = this.props;
     if (!auth.uid) return <Redirect to='/signin'/>
@@ -56,7 +56,6 @@ const mapStateToProps=(state,ownProps)=>{
   const orders=state.firestore.data.orders;
   const order=orders ? orders[id]:null;
 
-  
   return {
     order:order,
     auth:state.firebase.auth
