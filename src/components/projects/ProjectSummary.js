@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 const ProjectSummary = (project) => {
+  console.log(project.project.date)
   return (
     <tr>
     <td><Link to={{
@@ -10,7 +12,7 @@ const ProjectSummary = (project) => {
         </Link></td>
     <td>{project.size}</td>
     <td>{project.extras}</td>
-    <td>{project.date}</td>
+    <td>{moment(project.project.date).calendar()}</td>
     </tr>
 
 
