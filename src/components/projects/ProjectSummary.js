@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 const ProjectSummary = (project) => {
-  console.log(project.project.date)
   return (
     <tr>
     <td><Link to={{
