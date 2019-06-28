@@ -48,10 +48,10 @@ class CreateProject extends Component {
             <div className="input-field col s12">
               <select ref='selections' onChange={this.handleChange} id='drink'>
               <option value="" disabled defaultValue>Choose your option</option>
-                <option value="mocha">Mocha</option>
-                <option value="latte">Latte</option>
-                <option value="hot_chocolate">Hot Chocolate</option>
-                <option value="flat_white">Flat White</option>
+                <option value="Mocha">Mocha</option>
+                <option value="Latte">Latte</option>
+                <option value="Hot chocolate">Hot Chocolate</option>
+                <option value="Flat white">Flat White</option>
               </select>
               <label>Coffee</label>
             </div>
@@ -59,9 +59,9 @@ class CreateProject extends Component {
           <div className='section'>
             <div className="input-field col s12">
               <select ref='selections' onChange={this.handleChange}  id='size'>
-                <option value="small"  >Small</option>
-                <option value="medium" defaultValue  >Medium</option>
-                <option value="large"  >Large</option>
+                <option value="Small"  >Small</option>
+                <option value="Medium" defaultValue  >Medium</option>
+                <option value="Large"  >Large</option>
               </select>
               <label>Size</label>
             </div>
@@ -70,21 +70,21 @@ class CreateProject extends Component {
             <div className="input-field col s12">
               <select multiple onChange={this.handleChange}  id='extras'>
                 <option value="" disabled  >Choose your option</option>
-                <option value="soy_milk"  >Soy milk</option>
-                <option value="almond_milk"  >Almond milk</option>
-                <option value="caramel"  >Caramel topping</option>
-                <option value="vanilla"  >Vanilla topping</option>
-                <option value="hazelnut"  >Hazelnut topping</option>
-                <option value="decaf"  >Decaf</option>
-                <option value="extra_shot" onChange={this.handleChange} >Double shot</option>
+                <option value="Soy Milk"  >Soy milk</option>
+                <option value="Almond Milk"  >Almond milk</option>
+                <option value="Caramel"  >Caramel topping</option>
+                <option value="Vanilla"  >Vanilla topping</option>
+                <option value="Hazelnut"  >Hazelnut topping</option>
+                <option value="Decaf"  >Decaf</option>
+                <option value="Extra shot" onChange={this.handleChange} >Double shot</option>
               </select>
               <label>Extras</label>
             </div>
           </div>
           <div className='section'>
           <div className="input-field col s12">
-            <label htmlFor="other">If other, please specify</label>
-            <input type="text" id='other' placeholder="ex: Orange Juice" onChange={this.handleChange} />
+            {/* <label htmlFor="other">If other, please specify</label> */}
+            <input type="text" id='other' placeholder="If other, please specify. Ex: Orange Juice" onChange={this.handleChange} />
           </div>
           </div>
           <div className='container'>

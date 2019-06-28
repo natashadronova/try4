@@ -43,7 +43,6 @@ const ProjectDetails=(props) =>{
           <th>Ordered by</th>
             <td>{order.authorFirstName} {order.authorLastName}</td>
           </tr>
-
         </tbody>
         </table>
     </div>)

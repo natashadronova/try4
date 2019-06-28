@@ -12,6 +12,8 @@ const ProjectSummary = (project) => {
     <td>{project.size}</td>
     <td>{project.extras}</td>
     <td>{moment(project.project.date).calendar()}</td>
+    <td><a class="waves-effect waves-light btn-small orange">Edit</a></td>
+    <td><a class="waves-effect waves-light btn-small red">Delete</a></td>
     </tr>
 
 
