@@ -37,7 +37,7 @@ const ProjectSummary = (project,authored) => {
     {(project.authored===true) &&
      <td>
        
-       <a className="waves-effect waves-light btn-small orange" onClick={routeChange}> <NavLink to={`order/${project.project.id}/edit`}> Edit</NavLink></a>
+       <a className="waves-effect waves-light btn-small orange" onClick={routeChange}> <NavLink to={`order/${project.project.id}/edit`} > Edit</NavLink></a>
        
      <button className="waves-effect waves-light btn-small red" >Delete</button>
      </td>

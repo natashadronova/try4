@@ -108,7 +108,7 @@ const mapDispatchToProps=(dispatch)=>{
 const mapStateToProps=(state)=>{
   return{
     auth: state.firebase.auth,
-    firestore: state
+    // firestore: state
   }
 }
 
