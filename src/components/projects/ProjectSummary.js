@@ -1,8 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import { Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import { tsConstructorType } from '@babel/types';
 
-const ProjectSummary = (project) => {
+const ProjectSummary = (project,authored) => {
+  
+  
+
+
+  
+
+  
+  
+  function routeChange (e)  {
+    e.preventDefault();
+    console.log(project);
+    if (project.authored===true) {
+      console.log(project.project.id);
+      // return <Redirect to='/createproject'/>
+    }
+    // 
+   
+  }
+  
   return (
     <tr>
     <td><Link to={{
@@ -12,12 +34,22 @@ const ProjectSummary = (project) => {
     <td>{project.size}</td>
     <td>{project.extras}</td>
     <td>{moment(project.project.date).calendar()}</td>
-    <td><a class="waves-effect waves-light btn-small orange">Edit</a></td>
-    <td><a class="waves-effect waves-light btn-small red">Delete</a></td>
+    {(project.authored===true) &&
+     <td>
+       
+       <a className="waves-effect waves-light btn-small orange" onClick={routeChange}> <NavLink to={`order/${project.project.id}/edit`}> Edit</NavLink></a>
+       
+     <button className="waves-effect waves-light btn-small red" >Delete</button>
+     </td>
+    }
+   
+    {/* <td><a ><button className="waves-effect waves-light btn-small orange" onClick={handleEdit}> Edit</button></a></td> */}
+    
     </tr>
 
 
   )
+
 
 }
 

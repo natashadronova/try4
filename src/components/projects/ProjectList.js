@@ -3,8 +3,8 @@ import ProjectSummary from './ProjectSummary';
 
 
 
-const ProjectList = ({ projects }) => {
-  console.log(projects);
+const ProjectList = ({ projects,auth }) => {
+  
   return (
     <div className="project-list section">
       <table>
@@ -19,9 +19,16 @@ const ProjectList = ({ projects }) => {
         <tbody>
 
           {projects && projects.map(project => {
+           
+            function checkAuthor()  {
+              if (project.authorID===auth.uid) {
+               
+                return true
+              }
+            }
             return (
 
-              <ProjectSummary project={project} key={project.id} drink={project.drink} size={project.size} extras={project.extras}
+              <ProjectSummary project={project} key={project.id} drink={project.drink} size={project.size} extras={project.extras} authored={checkAuthor()}
               /> // 
             )
           })}
