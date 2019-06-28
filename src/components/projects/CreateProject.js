@@ -36,7 +36,8 @@ class CreateProject extends Component {
   }
 
   render() {
-    const {auth} = this.props;
+    const {auth, firestore} = this.props;
+    console.log(firestore);
     if (!auth.uid) return <Redirect to='/signin'/>
     return (
       <div className="container">
@@ -106,7 +107,8 @@ const mapDispatchToProps=(dispatch)=>{
 
 const mapStateToProps=(state)=>{
   return{
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    firestore: state
   }
 }
 
