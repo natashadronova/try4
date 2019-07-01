@@ -16,15 +16,15 @@ const ProjectSummary = (project,authored) => {
   
   function routeChange (e)  {
     e.preventDefault();
-    console.log(project);
+    // console.log(project);
     if (project.authored===true) {
-      console.log(project.project.id);
+      // console.log(project.project.id);
       // return <Redirect to='/createproject'/>
     }
     // 
    
   }
-  
+  console.log(this)
   return (
     <tr>
     <td><Link to={{
@@ -37,7 +37,10 @@ const ProjectSummary = (project,authored) => {
     {(project.authored===true) &&
      <td>
        
-       <a className="waves-effect waves-light btn-small orange" onClick={routeChange}> <NavLink to={`order/${project.project.id}/edit`} > Edit</NavLink></a>
+       <a className="waves-effect waves-light btn-small orange" onClick={routeChange}> 
+          <NavLink to={
+            `order/${project.project.id}/edit`} > Edit</NavLink>
+      </a>
        
      <button className="waves-effect waves-light btn-small red" >Delete</button>
      </td>
