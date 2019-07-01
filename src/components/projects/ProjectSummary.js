@@ -4,6 +4,9 @@ import moment from 'moment';
 import { Redirect } from 'react-router-dom';
 import { NavLink } from 'react-router-dom'
 import { tsConstructorType } from '@babel/types';
+import { FaEdit, FaEraser } from 'react-icons/fa';
+
+
 
 const ProjectSummary = (project,authored) => {
   
@@ -37,12 +40,12 @@ const ProjectSummary = (project,authored) => {
     {(project.authored===true) &&
      <td>
        
-       <a className="waves-effect waves-light btn-small orange" onClick={routeChange}> 
+       <a className="waves-effect waves-light " onClick={routeChange}> 
           <NavLink to={
-            `order/${project.project.id}/edit`} > Edit</NavLink>
+            `order/${project.project.id}/edit`} ><FaEdit/> </NavLink>
       </a>
        
-     <button className="waves-effect waves-light btn-small red" >Delete</button>
+     <a className="waves-effect waves-light " ><FaEraser /></a>
      </td>
     }
    
